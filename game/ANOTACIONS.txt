@@ -1,0 +1,33 @@
+WALL (paret), GRASS (herba), CITY (ciutat) o PATH (camı́)
+
+Qualsevol jugador que intenti donar més de 1000 ordres a la mateix ronda
+s’avortarà.
+
+Moviment
+    Esquerra, Dreta, Amunt, Avall
+
+Les cel·les poden estar ocupades per com a molt una unitat.
+    Mirar si esta ocupada, per unitat meva o enemiga
+
+Atacs
+    Entre 25 i 40 punts de vida amb probabilitat aleatòria
+    Si una mor per una altre la unitat respawnea i queda sota el control de l'assassí
+
+Mascares
+    Cada 5 rondes apareix màscara a cel·la herba
+    Si un jugador no porta mascara l'agafa automaticament (pot tenir el virus la mascara?)
+    Si porta mascara l'ignorarà
+    Un jugador mor amb mascara -> aquesta desapareix
+
+Conquerir (camins i ciutats)
+    Propietari es qui té mes unitats en aquella zona que qualsevol altre
+        Cada ronda guanya punts
+        bonus per city cell() × mida de la ciutat
+        total de bonus per path cell() × mida del camı́
+
+    Graf de conqustes
+        vertexs ciutats
+        arestes camins conquerits que conecten ciutats sota el seu control
+    
+    Per cada component CONNEXA de MIDA I, obté punts addicionals
+        2^i × factor connected component()
